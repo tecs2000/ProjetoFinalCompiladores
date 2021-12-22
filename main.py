@@ -1,14 +1,3 @@
-# EQUIPE TOP
-
-# Lucas Leonardo Barros Silva
-# Weybson Alves da Silva
-# Wesley Alves da Silva
-# Mihael Éder Guedes Barreiros 
-# Tomás Nascimento Pimentel Barros
-# João Victor Soares Ferreira
-# Gabriel Felipo Raeli de Melo
-# Natan Frederico da Silva Lima
-
 import multiprocessing
 import os
 import socket
@@ -22,9 +11,6 @@ from tkinter import filedialog as fileDlg
 from PIL import Image as Img
 from PIL import ImageTk as ImgTk
 from pygame import mixer as mxer
-
-import Player as Player
-
 
 class GUI:
     def __init__(self, width, height, user, _target):
