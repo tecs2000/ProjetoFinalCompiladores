@@ -70,8 +70,12 @@ public class Interpreter implements Expr.Visitor<Integer> {
 			break;
 			
 		case EQUAL:
-			env.put(((Expr.Id)expr.left).value, Integer.toString(right));
-			result = right;
+			if (expr.left.getClass().getName().equals("postfix.ast.Expr$Id")) {
+                env.put(((Expr.Id)expr.left).value, Integer.toString(right));
+                result = right;
+            }
+            else
+                throw new InterError("Atribuição inválida");
 			break;
 			
 		default:
