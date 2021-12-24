@@ -116,7 +116,6 @@ public class Postfix {
 			if(debugging) {
 				printAST(expr);
 			}
-			interpreter.env.put("y", "10");
 			System.out.println(interpreter.interp(expr));
 		} catch (LexError e) {
 			error("Lex", e.getMessage());

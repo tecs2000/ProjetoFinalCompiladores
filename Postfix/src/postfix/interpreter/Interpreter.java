@@ -27,7 +27,7 @@ import postfix.ast.Expr.Id;
 public class Interpreter implements Expr.Visitor<Integer> {
 	
 	public final HashMap<String, String> env;
-	public Interpreter(HashMap<String, String> env){ this.env = env; }
+	public Interpreter(HashMap<String, String> env){ this.env = env; this.env.put("y", "10");}
 	  
 	public int interp(Expr expression) { 
 		int value = evaluate(expression);
@@ -41,7 +41,7 @@ public class Interpreter implements Expr.Visitor<Integer> {
 			return Integer.parseInt(env.get(expr.value));
 		}
 		catch (NumberFormatException e){
-			throw new InterError("Variavel "+ expr.value + " foravariável fora do escopo");
+			throw new InterError("Variavel '"+ expr.value + "' fora do escopo");
 		}
 	}
 	
